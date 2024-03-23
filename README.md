@@ -31,7 +31,7 @@ Disclaimer:
 This project is a clone and is not affiliated with or endorsed by Google or the Google Pixel brand. It's intended for educational and demonstration purposes only.
 
 
-<p style="color: yellow;">App is legit fr fr</p>
+<p">👌App is legit fr fr ✨</p>
 
 
 <div style="display:flex;">
