@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  
+  }
+
+
+  @font-face {
+    font-family: 'Google';
+    src: url('../fonts/ProductSans-Regular.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Google-thin';
+    src: url('../fonts/ProductSans-Thin.ttf') format('truetype');
+
+  }
+
+  @font-face {
+    font-family: 'Google-light';
+    src: url('../fonts/ProductSans-Light.ttf') format('truetype');
+
+  }
+
+  @font-face {
+    font-family: 'Google-medium';
+    src: url('../fonts/ProductSans-Medium.ttf') format('truetype');
+
+  }
+
+
+  @font-face {
+    font-family: 'Material icons outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Material-Icons-outlined.otf') format('opentype');
+  }
+  
+
+  @font-face {
+    font-family: 'Material icons filled';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Material-Icon-filled.otf') format('opentype');
+  }
+  
+
+  .icon-class-filled{
+    font-family: 'Material icons filled';
+    font-style: normal !important;
+}
+
+.icon-class-outlined{
+    font-family: 'Material icons outlined';
+    font-style: normal !important;
+}
+
+
+

@@ -1,0 +1,276 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    background-color: var(--Surface);
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--google-normal);
+}
+
+*{
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+
+
+svg {
+    filter:url(#fancy-goo);
+    opacity:0;
+    transition:all 400ms ease-out;
+}
+
+svg .dot {
+    fill: var(--On-Surface);
+    transition:all 400ms ease-out;
+    stroke: #4285f4;
+    stroke-width:0;
+    r:9;
+}
+
+#pattern {
+    fill:none;
+    stroke-width:10;
+    stroke:#4285f4;
+}
+
+svg .visited {
+    stroke:#4285f4;
+    stroke-width:9;
+    r:12;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   position: fixed;
+   top: 240px;
+   width: 100%;
+}
+
+.pattern_actions{
+    width: 100%;
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.pattern_actions button:first-child{
+    font-family: var(--google-mid);
+    color: var(--Primary);
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 3px;
+    margin-left: 20px;
+
+}
+
+.pattern_actions button:last-child{
+    font-family: var(--google-mid);
+    color: var(--On-Primary);
+    background-color: var(--Primary);
+    border: none;
+    font-size: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    border-radius: 3px;
+    margin-right: 20px;
+}
+
+.pattern_actions button:disabled:last-child{
+    opacity: 0.7;
+    background-color: var(--Surface-Container-High);
+    color: var(--Surface);
+    pointer-events: none;
+}
+
+.top_heading_pattern{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-left: 25px;
+
+}
+
+.top_heading_pattern i{
+    font-size: 50px;
+    color: var(--Primary);
+}
+
+.top_heading_pattern p{
+    font-family: var(--google-normal);
+    font-size: 27px;
+    margin: 0;
+    margin-top: 13px;
+    padding-bottom: 7px;
+}
+
+.top_heading_pattern span{
+    font-size: 18px;
+    padding-right: 20px;
+}
+
+
+/* pin */
+
+
+.pin_input_holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pin_input_holder input{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    border-bottom: 2.5px solid var(--Primary);
+    width: 85%;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 30px;
+    font-family: var(--google-normal);
+    color: var(--On-Surface);
+    caret-color: var(--Primary);
+}
+
+
+.c-keyboard{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    bottom: -0px;
+    background-color: var(--Surface-Container);
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  .c-keyboard-keys{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 6px;
+    column-gap: 5px;
+  }
+
+  .c-keyboard-keys button:not(:last-child):not(:nth-last-child(3)) {
+    width: 110px;
+    border-radius: 50px;
+    height: 65px;
+    border: none;
+    background-color: var(--Surface-Container-Highest);
+    font-family: var(--google-normal);
+    position: relative;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .c-keyboard-keys button span{
+    position: absolute;
+    right: 13px;
+    font-size: 14px;
+    color: var(--On-Surface-Variant);
+    font-family: var(--google-normal);
+
+  }
+  
+  .c-keyboard-keys button p{
+    position: absolute;
+    left: 37px;
+    font-size: 32px;
+
+  }
+
+  .c-keyboard-keys button:last-child{
+    width: 110px;
+    border-radius: 50px;
+    height: 65px;
+    border: none;
+    font-size: 28px;
+    background-color: var(--Tertiary);
+    color: var(--On-Tertiary);
+    position: relative;
+
+  }
+
+  .c-keyboard-keys button:nth-last-child(3){
+    width: 110px;
+    border-radius: 50px;
+    height: 65px;
+    border: none;
+    background-color: var(--Primary);
+    color: var(--On-Primary);
+    font-size: 28px;
+    position: relative;
+
+  }
+
+  .pin_actions{
+    width: 100%;
+    position: absolute;
+    bottom: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .pin_actions button:first-child{
+    font-family: var(--google-mid);
+    color: var(--Primary);
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 3px;
+    margin-left: 20px;
+
+}
+
+.pin_actions button:last-child{
+    font-family: var(--google-mid);
+    color: var(--On-Primary);
+    background-color: var(--Primary);
+    border: none;
+    font-size: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    border-radius: 3px;
+    margin-right: 20px;
+}
+
+.pin_actions button:disabled:last-child{
+    opacity: 0.7;
+    background-color: var(--Surface-Container-High);
+    color: var(--Surface);
+    pointer-events: none;
+}

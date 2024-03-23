@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-color-theme="Material You (Raisin purple 100)" use-material-3="true" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Pattern</title>
+    <link rel="stylesheet" href="../ui-files/variables.css">
+    <link rel="stylesheet" href="../ui-files/font-usage.css">
+    <link rel="stylesheet" href="screen_lock_ui.css">
+    <link rel="stylesheet" href="../ripple-files/ripple.css">
+</head>
+<body>
+
+
+        <div class="top_heading_pattern">
+            <i class="icon-class-outlined">lock</i>
+            <p>Set a pattern</p>
+
+            <span id="error_messages">For added security, set a pattern to unlock the device</span>
+        </div>
+
+    <div class="wrapper">
+       
+        <svg>
+            <path id="pattern"></path>
+            <filter id="fancy-goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </svg>
+    </div>
+    
+
+
+    <div class="pattern_actions">
+        <button class="md-ripples ripples-primary" onclick="clear_pattern_btn()">CLEAR</button>
+        <button class="md-ripples ripples-inverse" disabled id="next_btn">NEXT</button>
+    </div>
+    
+    <script>
+          const themeStyle = localStorage.getItem('theme');
+    
+    
+    document.documentElement.setAttribute('data-theme', themeStyle);
+  
+    if(themeStyle === 'light'){
+    sendThemeToAndroid('LightStyle')
+  } else{
+    sendThemeToAndroid('DarkStyle')
+
+  }
+
+  function sendThemeToAndroid(theme) {
+
+AndroidInterface.updateStatusBarColor(theme);
+};
+    
+    </script>
+    
+    <script type="module" src="./index.js"></script>
+    <script src="./bundle.js"></script>
+    <script src="securityHandle.js"></script>
+    <script src="../ripple-files/ripples.js"></script>
+</body>
+</html>

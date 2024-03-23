@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-color-theme="Material You (Raisin purple 100)" use-material-3="true" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin lock</title>
+    <link rel="stylesheet" href="../ui-files/variables.css">
+    <link rel="stylesheet" href="../ui-files/font-usage.css">
+    <link rel="stylesheet" href="screen_lock_ui.css">
+    <link rel="stylesheet" href="../ripple-files/ripple.css">
+
+</head>
+<body>
+
+    <div class="top_heading_pattern">
+        <i class="icon-class-outlined">lock</i>
+        <p>Set a PIN</p>
+
+        <span id="Pin_Message" style="color: var(--Error);">PIN must be at least 4 digits, but a 6-digit PIN is recommended for added security</span>
+    </div>
+
+    <div class="pin_input_holder">
+    <input type="text" id="pinInput" onclick="enableInput()" inputmode="none">
+</div>
+
+
+<div class="pin_actions">
+    <button class="md-ripples ripples-primary" onclick="clearInputPin()">CLEAR</button>
+    <button class="md-ripples ripples-inverse" disabled id="next_btn_pin" onclick="sendThemeToAndroid('ShowToastDemo')">Next</button>
+</div>
+
+<div class="c-keyboard unit-keyboard">
+    <div class="c-keyboard-keys">
+        <button class="" onclick="appendToAmount('1'); checkPasswordLength()">
+           <p>1</p>  <span></span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class=""onclick="appendToAmount('2'); checkPasswordLength()">
+            <p>2</p> <span>ABC</span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class="" onclick="appendToAmount('3'); checkPasswordLength()">
+            <p>3</p> <span>DEF</span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class="" onclick="appendToAmount('4'); checkPasswordLength()">
+            <p>4</p> <span>GHI</span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class="" onclick="appendToAmount('5'); checkPasswordLength()">
+            <p>5</p> <span>JKL</span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class="" onclick="appendToAmount('6'); checkPasswordLength()">
+            <p>6</p> <span>MNO</span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class="" onclick="appendToAmount('7'); checkPasswordLength()">
+            <p>7</p> <span>PQRS</span>
+           <md-ripple></md-ripple>
+        </button> 
+        <button class="" onclick="appendToAmount('8'); checkPasswordLength()">
+            <p>8</p> <span>TUV</span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class="" onclick="appendToAmount('9'); checkPasswordLength()">
+            <p>9</p> <span>WXYZ</span>
+           <md-ripple></md-ripple>
+        </button>
+        <button class="icon-class-outlined" style="--md-ripple-pressed-color: var(--Inverse-Primary)" onclick="clearOneCharacter(); checkPasswordLength()">
+            backspace
+           <md-ripple></md-ripple>
+        </button>
+        <button class="" onclick="appendToAmount('0'); checkPasswordLength()">
+            <p>0</p> <span></span>
+           <md-ripple></md-ripple>
+        </button>
+        <button style="--md-ripple-pressed-color: var(--Inverse-Primary)" class="icon-class-outlined">
+            keyboard_tab
+           <md-ripple></md-ripple>
+        </button>
+    </div>
+</div>
+
+<script>
+  const themeStyle = localStorage.getItem('theme');
+    
+    
+  document.documentElement.setAttribute('data-theme', themeStyle);
+  
+
+  if(themeStyle === 'light'){
+    sendThemeToAndroid('LightStyle')
+  } else{
+    sendThemeToAndroid('DarkStyle')
+
+  }
+
+    function sendThemeToAndroid(theme) {
+
+AndroidInterface.updateStatusBarColor(theme);
+};
+
+
+// pin
+
+function checkPasswordLength() {
+    var password = document.getElementById("pinInput").value;
+    var messageElement = document.getElementById("Pin_Message");
+
+    if (password.length >= 4) {
+        messageElement.textContent = "";
+        document.getElementById('next_btn_pin').disabled = false
+    } else {
+        messageElement.textContent = "PIN must be at least 4 digits, but a 6-digit PIN is recommended for added security";
+        document.getElementById('next_btn_pin').disabled = true
+
+    }
+}
+
+
+// keyboard handle
+
+function enableInput() {
+    document.getElementById('pinInput').readOnly = false;
+  }
+
+
+
+  function appendToAmount(value) {
+    const input = document.getElementById('pinInput');
+    const startPos = input.selectionStart;
+    const endPos = input.selectionEnd;
+    input.focus();
+    let currentValue = input.value;
+
+    if (currentValue.length >= 25) {
+      currentValue = currentValue.substring(0, 25);
+      return
+    }
+
+
+    const beforeCursor = currentValue.substring(0, startPos);
+    const afterCursor = currentValue.substring(endPos);
+
+
+    const newValue = beforeCursor + value + afterCursor;
+
+    // const unformattedValue = newValue.replace(/,/g, '');
+    // const formattedValue = Number(unformattedValue).toLocaleString();
+
+    input.value = newValue;
+
+
+    const lengthDiff = newValue.length - currentValue.length;
+
+    input.setSelectionRange(startPos + lengthDiff, startPos + lengthDiff);
+  }
+
+
+
+
+  function clearOneCharacter() {
+    const input = document.getElementById('pinInput');
+    const startPos = input.selectionStart;
+    const endPos = input.selectionEnd;
+
+    if (startPos === endPos && startPos > 0) {
+      const currentValue = input.value;
+      const newValue = currentValue.substring(0, startPos - 1) + currentValue.substring(endPos);
+      input.value = newValue;
+    input.focus();
+
+      input.setSelectionRange(startPos - 1, startPos - 1);
+    }
+  }
+
+
+
+
+
+  function clearInputPin(){
+    document.getElementById("pinInput").value = ''
+    checkPasswordLength() 
+
+    document.getElementById('pinInput').focus();
+  }
+
+
+
+
+
+</script>
+
+    <script src="./bundle.js"></script>
+    <script src="../ripple-files/ripples.js"></script>
+    <script type="module" src="./material.js"></script>
+</body>
+</html>

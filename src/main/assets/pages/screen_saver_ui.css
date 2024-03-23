@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: var(--google-normal);
+    overflow: hidden;
+}
+
+.clock {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: max-content;
+    transition: opacity 1s ease;
+    color: silver;
+
+  }
+  
+  .date{
+    font-size: 30px;
+  }
+  
+  .time{
+    font-size: 60px;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  

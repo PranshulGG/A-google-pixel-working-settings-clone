@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bg">#0d0d0d</color>
+    <color name="DemoAlertColor">#ee675c</color>
+    <color name="purpleBG">#161217</color>
+    <color name="surfacContainer" >#221e24</color>
+    <color name="PurpleBGLIGHT">#fff7fd</color>
+    <color name="purpleSurfaceContainerLight">#f4ebf3</color>
+</resources>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarthQuake alert</title>
+    <link rel="stylesheet" href="../ui-files/variables.css">
+    <link rel="stylesheet" href="../ui-files/font-usage.css">
+
+    <style>
+        body {
+            background-color: #000000;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Google';
+            user-select: none;
+            outline: none;
+
+        }
+
+        .top-block {
+            display: flex;
+            height: 300px;
+            background-color: #ee675c;
+            align-items: flex-end;
+        }
+
+        .content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            padding-left: 10px;
+            margin-bottom: 40px;
+
+        }
+
+        .content i {
+            font-family: 'Material icons outlined';
+            font-style: normal;
+            font-size: 60px;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .content p {
+            font-size: 37px;
+            margin: 0;
+            color: black;
+            margin-bottom: 20px !important;
+        }
+        .content span {
+            color: black;
+            font-size: 24px;
+        }
+        .img-items img{
+            width: 180px;
+        }
+
+        .img-items{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .img-items:last-child{
+            margin-bottom: 0;
+        }
+
+        .img-items p{
+            color: white;
+            margin: 0;
+            font-size: 35px;
+            
+        }
+
+        .earthquake_imgs{
+            margin-top: 15px;
+        }
+
+        .footer_area{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .footer_area p{
+            margin: 0;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer_area button{
+            background-color: #ee675c;
+            border-radius: 50px;
+            border: none;
+            font-size: 20px;
+            height: 45px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="top-block">
+        <div class="content">
+            <i>warning</i>
+            <p>Earthquake Demo</p>
+            <span>Estimated magnitude 6.1</span>
+            <span>10.1 miles away</span>
+
+        </div>
+    </div>
+
+    <div class="earthquake_imgs">
+        <div class="img-items">
+            <p>Drop</p>
+            <img src="../images/drop_earth_quake.png" alt="">
+        </div>
+
+        <div class="img-items">
+            <p>Cover</p>
+            <img src="../images/cover_earth_quake.png" alt="">
+        </div>
+
+        <div class="img-items">
+            <p>Hold</p>
+            <img src="../images/hold_earth_quake.png" alt="">
+        </div>
+    </div>
+
+    <div class="footer_area">
+        <p>Android Earthquake Alerts System</p>
+        <button id="ontouc" onclick="sendThemeToAndroid('Goback')">Close Demo</button>
+    </div>
+
+<script>
+    
+    function sendThemeToAndroid(theme) {
+
+AndroidInterface.updateStatusBarColor(theme);
+};
+
+document.getElementById('ontouc').addEventListener('touchstart', () =>{
+    document.getElementById('ontouc').style.backgroundColor = 'red';
+});
+
+document.getElementById('ontouc').addEventListener('touchend', () =>{
+    document.getElementById('ontouc').style.backgroundColor = '';
+});
+
+</script>
+
+</body>
+
+</html>
