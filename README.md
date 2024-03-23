@@ -32,5 +32,13 @@ This project is a clone and is not affiliated with or endorsed by Google or the 
 
 
 
-<img src="src/main/assets/images/settings_icon_main.png" alt="" width="100px">
+
+
+<div style="display:flex;">
+<img alt="App image" src="preview_imgs/preview_1.jpeg" width="30%">
+<img alt="App image" src="preview_imgs/preview_2.jpeg" width="30%">
+<img alt="App image" src="preview_imgs/preview_3.jpeg" width="30%">
+<img alt="App image" src="preview_imgs/preview_4.jpeg" width="30%">
+  
+</div>
 
