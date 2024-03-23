@@ -1,11 +1,11 @@
 
-                <div style="display: flex; align-items: center; justify-content: center;">
-                    <img src="src/main/assets/images/settings_icon_main.png" alt="">
-                </div>
+              
 
 
+# Project Name: Google Pixel Settings App Clone
 
-Project Name: Google Pixel Settings App Clone
+
+<img src="src/main/assets/images/settings_icon_main.png" alt="" width="100px">
 
 This project is a clone of the settings app found on Google Pixel devices. It's built using Java for the backend logic and HTML, CSS, and JavaScript for the frontend interface. The app closely mimics the look and feel of the original Google Pixel settings app and includes functionality similar to the original, with some settings fully operational.
 
@@ -32,5 +32,5 @@ This project is a clone and is not affiliated with or endorsed by Google or the 
 
 
 
-<img
+<img src="src/main/assets/images/settings_icon_main.png" alt="" width="100px">
 
