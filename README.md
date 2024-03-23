@@ -29,9 +29,12 @@ This project was created by Pranshul.
 
 Disclaimer:
 This project is a clone and is not affiliated with or endorsed by Google or the Google Pixel brand. It's intended for educational and demonstration purposes only.
+* Don't run the HTML files directly in your browser as it won't function properly. 
 
 
-<p">👌App is legit fr fr ✨</p>
+<p>👌App is legit fr fr ✨</p>
+<p>You can install the app on your device if you want to try it <a href='https://github.com/PranshulGG/A-google-pixel-working-settings-clone/releases/tag/clone'>Here</a></p>
+
 
 
 <div style="display:flex;">
