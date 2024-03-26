@@ -236,7 +236,7 @@ document.addEventListener('click', function(event) {
       
 
 
-// full-activity-large-header-math
+// full-activity-large-header
 
 const LargeActivityContents = document.querySelectorAll('.activity-large-content');
 const HiddenLabels = document.querySelectorAll('.label-hidden-large');
