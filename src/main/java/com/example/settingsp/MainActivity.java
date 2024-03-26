@@ -872,13 +872,13 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(mActivity, "$(string: not defined;)", Toast.LENGTH_LONG).show();
                         return;
                     } else if (color.equals("bluesetDef")) {
-                        Toast.makeText(mActivity, "set pop_blue_default", Toast.LENGTH_LONG).show();
+                       
 
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
 
-                                Toast.makeText(mActivity, "error $colorgenerateai.cpp (string: not defined;)", Toast.LENGTH_LONG).show();
+                               
                             }
                         }, 2000);
 
