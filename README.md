@@ -2,7 +2,7 @@
               
 
 
-# Project Name: Google Pixel Settings App Clone
+# Google Pixel Settings App Clone
 
 
 <img src="src/main/assets/images/settings_icon_main.png" alt="" width="100px">
